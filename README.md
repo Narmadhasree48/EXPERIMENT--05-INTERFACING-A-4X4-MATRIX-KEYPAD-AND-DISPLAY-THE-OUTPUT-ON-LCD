@@ -304,7 +304,96 @@ void key()
 		HAL_Delay(500);
 	}
 
+	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_2,GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_3,GPIO_PIN_SET);
 
+		col1 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_4);
+		col2 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_5);
+		col3 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_6);
+		col4 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_7);
+		Lcd_cursor(&lcd,0,1);
+		if(!col1)
+		{
+			Lcd_string(&lcd,"key 4\n");
+			HAL_Delay(500);
+		}
+		else if(!col2)
+		{
+			Lcd_string(&lcd,"key 5\n");
+			HAL_Delay(500);
+		}
+		else if(!col3)
+		{
+			Lcd_string(&lcd,"key 6\n");
+			HAL_Delay(500);
+		}
+		else if(!col4)
+		{
+			Lcd_string(&lcd,"key *\n");
+			HAL_Delay(500);
+		}
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOC,GPIO_PIN_2,GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOC,GPIO_PIN_3,GPIO_PIN_SET);
+
+			col1 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_4);
+			col2 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_5);
+			col3 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_6);
+			col4 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_7);
+			Lcd_cursor(&lcd,0,1);
+			if(!col1)
+			{
+				Lcd_string(&lcd,"key 1\n");
+				HAL_Delay(500);
+			}
+			else if(!col2)
+			{
+				Lcd_string(&lcd,"key 2\n");
+				HAL_Delay(500);
+			}
+			else if(!col3)
+			{
+				Lcd_string(&lcd,"key 3\n");
+				HAL_Delay(500);
+			}
+			else if(!col4)
+			{
+				Lcd_string(&lcd,"key -\n");
+				HAL_Delay(500);
+			}
+			HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,GPIO_PIN_SET);
+				HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_SET);
+				HAL_GPIO_WritePin(GPIOC,GPIO_PIN_2,GPIO_PIN_SET);
+				HAL_GPIO_WritePin(GPIOC,GPIO_PIN_3,GPIO_PIN_RESET);
+
+				col1 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_4);
+				col2 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_5);
+				col3 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_6);
+				col4 = HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_7);
+				Lcd_cursor(&lcd,0,1);
+				if(!col1)
+				{
+					Lcd_string(&lcd,"key ON\n");
+					HAL_Delay(500);
+				}
+				else if(!col2)
+				{
+					Lcd_string(&lcd,"key 0\n");
+					HAL_Delay(500);
+				}
+				else if(!col3)
+				{
+					Lcd_string(&lcd,"key =\n");
+					HAL_Delay(500);
+				}
+				else if(!col4)
+				{
+					Lcd_string(&lcd,"key +\n");
+					HAL_Delay(500);
+				}
 }
 /**
   * @brief System Clock Configuration
@@ -432,9 +521,11 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
 ```
 ## Output screen shots of proteus  :
- ![Screenshot 2024-09-23 141220](https://github.com/user-attachments/assets/75848c27-4912-415e-8a0b-9e052901dd4a)
+![image](https://github.com/user-attachments/assets/a4f1c0a7-6540-4298-9d3b-538c2a5fb002)
+
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
  ![image](https://github.com/user-attachments/assets/79e0a8b0-ca18-4351-a8e2-eb4d32d5e16c)
 ## Result :
